@@ -14,6 +14,7 @@ export class AppComponent implements OnInit {
   newUser: any = {};
   editUserForm: boolean;
   editedUser: any = {};
+  statuses = ["Active","Inactive"];
 
   constructor(private userService: UserService) {}
 
@@ -44,6 +45,7 @@ export class AppComponent implements OnInit {
   }
 
   saveUser(user: User) {
+    console.log(user);
     if (this.isNewUser) {
       // add a new user
       this.userService.addUser(user);
